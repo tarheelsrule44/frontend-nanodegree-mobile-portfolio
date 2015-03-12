@@ -2,6 +2,12 @@
 
 To view the project live, head over to http://tarheelsrule44.github.io/project-4/index.html
 
+Analyze this URL at https://developers.google.com/speed/pagespeed/insights/ to test the project's PageSpeed score.
+
+Then, head over to Cam's Pizzaria and open the console to test the speeds of pizza.html!
+
+
+
 The link includes minfied versions of HTML, CSS, and JS files. 
 
 For optimization of views/js/main.js:

@@ -445,12 +445,14 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+  var pizzaContainers = document.querySelectorAll(".randomPizzaContainer"); 
+  var dx = determineDx(pizzaContainers[0], size);  
+  var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
+  var pizzaContainerLength = pizzaContainers.length;
+
   // moved Variables dx and newwidth outside of the for loop for speed
-  function changePizzaSizes(size) { 
-      var pizzaContainers = document.querySelectorAll(".randomPizzaContainer"); 
-      var dx = determineDx(pizzaContainers[3], size);  
-      var newwidth = (pizzaContainers[3].offsetWidth + dx) + 'px';    
-      for (var i = 0; i < pizzaContainers.length; i++) {         
+  function changePizzaSizes(size) {           
+      for (var i = 0; i < pizzaContainerLength; i++) {         
         pizzaContainers[i].style.width = newwidth;
     }
   }
@@ -503,10 +505,12 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   // moved variables outside of the for loop for faster loads
+  // created the scrollSelector for speed
   var items = document.querySelectorAll('.mover');
-  var phase = Math.sin(document.body.scrollTop / 1250);  
-  for (var i = 0; i < items.length; i++) {        
-    items[i].style.left = items[i].basicLeft + 100 * (phase + (i % 5))  + 'px';
+  var scrollSelector = document.body.scrollTop;
+  for (var i = 0; i < items.length; i++) {   
+    var phase = Math.sin((scrollSelector / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase  + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
