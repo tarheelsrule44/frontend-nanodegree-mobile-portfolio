@@ -1,6 +1,6 @@
 ## Website Performance Optimization portfolio project
 
-To view the project live, head over to http://tarheelsrule44.github.io/project-4/index.html
+To view the project live, head over to http://tytanic.github.io/project-4/index.html
 
 Analyze this URL at https://developers.google.com/speed/pagespeed/insights/ to test the project's PageSpeed score.
 
